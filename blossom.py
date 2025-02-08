@@ -18,7 +18,7 @@ class Hashmap:
 
     def __compressed_hash(self, key):
         """
-        Returns a has compressed to fit within the hashmap's array.
+        Returns a hash compressed to fit within the hashmap's array.
 
         Parameters
         ----------
