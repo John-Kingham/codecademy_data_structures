@@ -17,6 +17,12 @@ class LinkedList:
     def __init__(self, value=None):
         self.head_node = Node(value)
 
+    def __iter__(self):
+        current_node = self.head_node
+        while current_node:
+            yield current_node.get_value()
+            current_node = current_node.get_next_node()
+
     def get_head_node(self):
         return self.head_node
 
