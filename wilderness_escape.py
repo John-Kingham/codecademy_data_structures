@@ -171,16 +171,16 @@ def main():
         if game.is_over():
             game_is_running = False
             continue
-        players_choice = None
-        input_is_valid = True
-        while not input_is_valid:
-            players_choice = input("Please choose an option: ")
+        player_choice = None
+        player_choice_is_valid = False
+        while player_choice_is_valid is False:
+            player_choice = input("Please choose an option: ")
             valid_range = range(game.num_choices())
-            if players_choice.isnumeric() and (int(players_choice) - 1) in valid_range:
-                input_is_valid = True
+            if player_choice.isnumeric() and (int(player_choice) - 1) in valid_range:
+                player_choice_is_valid = True
                 continue
             print("Invalid choice. Please try again.")
-        game.move_to_choice(int(players_choice))
+        game.move_to_choice(int(player_choice))
 
 
 if __name__ == "__main__":

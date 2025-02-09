@@ -24,3 +24,12 @@ class TestTree(unittest.TestCase):
         self.assertEqual(alice.traverse(), "Alice : Colin")
         alice.remove_child(colin)
         self.assertEqual(alice.traverse(), "Alice")
+
+    def test_to_string(self):
+        alice = TreeNode("Alice")
+        bob = TreeNode("Bob")
+        colin = TreeNode("Colin")
+        alice.add_child(bob)
+        alice.add_child(colin)
+        self.assertEqual(str(alice), "\nAlice\n|-Bob\n|-Colin\n")
+        
