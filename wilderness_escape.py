@@ -75,9 +75,9 @@ class Game:
         """
         return len(self.current_node.children)
 
-    def choose(self, choice):
+    def move_to_choice(self, choice):
         """
-        Updates the state of the game based on the player's choice.
+        Moves the state of the game forward based on the player's choice.
 
         Parameters
         ----------
@@ -93,7 +93,8 @@ class Game:
             Returns 1 if the choice was invalid.
         """
         index = int(choice) - 1
-        if index not in range(len(self.current_node.children)):
+        valid_range = range(len(self.current_node.children))
+        if index not in valid_range:
             return 1
         self.current_node = self.current_node.children[index]
 
@@ -164,19 +165,22 @@ def main():
     story_root.add_child(choice_b)
     game = Game(story_root)
     print("Once upon a time...")
-    while True:
+    game_is_running = True
+    while game_is_running:
         print(game.story_text())
         if game.is_over():
-            break
+            game_is_running = False
+            continue
         players_choice = None
-        while True:
+        input_is_valid = True
+        while not input_is_valid:
             players_choice = input("Please choose an option: ")
-            if players_choice.isnumeric() and (int(players_choice) - 1) in range(
-                game.num_choices()
-            ):
-                break
+            valid_range = range(game.num_choices())
+            if players_choice.isnumeric() and (int(players_choice) - 1) in valid_range:
+                input_is_valid = True
+                continue
             print("Invalid choice. Please try again.")
-        game.choose(int(players_choice))
+        game.move_to_choice(int(players_choice))
 
 
 if __name__ == "__main__":

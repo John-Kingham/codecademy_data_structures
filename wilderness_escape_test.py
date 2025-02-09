@@ -70,8 +70,8 @@ class TestGame(unittest.TestCase):
     def test_game(self):
         self.assertFalse(self.game.is_over())
         self.assertEqual(self.game.story_text(), self.story_root.story)
-        self.game.choose(1)
+        self.game.move_to_choice(1)
         self.assertEqual(self.game.story_text(), self.choice_a.story)
-        self.game.choose(2)
+        self.game.move_to_choice(2)
         self.assertEqual(self.game.story_text(), self.choice_a_2.story)
         self.assertTrue(self.game.is_over())
