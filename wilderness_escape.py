@@ -45,7 +45,7 @@ class Game:
     def story_text(self):
         """
         Returns the text for the current point in the adventure.
-        
+
         Returns
         -------
         string
@@ -59,11 +59,11 @@ class Game:
 
         Returns
         -------
-        Boolean
+        bool
             True if the game is over, false if it isn't.
         """
         return self.num_choices() == 0
-    
+
     def num_choices(self):
         """
         Returns the number of choices available to the player.
@@ -93,50 +93,69 @@ class Game:
             Returns 1 if the choice was invalid.
         """
         index = int(choice) - 1
-        if index not in range(len(self.current_node.children)): return 1
+        if index not in range(len(self.current_node.children)):
+            return 1
         self.current_node = self.current_node.children[index]
 
+
 def main():
-    story_root = StoryNode("""
+    """
+    Runs the game using the terminal as the interface.
+    """
+    story_root = StoryNode(
+        """
     You are in a forest clearing. There is a path to the left. A bear emerges from the trees and roars!
     Do you: 
     1 ) Roar back!
     2 ) Run to the left...
-    """)
-    choice_a = StoryNode("""
+    """
+    )
+    choice_a = StoryNode(
+        """
     The bear is startled and runs away.
     Do you:
     1 ) Shout 'Sorry bear!'
     2 ) Yell 'Hooray!'
-    """)
-    choice_b = StoryNode("""
+    """
+    )
+    choice_b = StoryNode(
+        """
     You come across a clearing full of flowers. 
     The bear follows you and asks 'what gives?'
     Do you:
     1 ) Gasp 'A talking bear!'
     2 ) Explain that the bear scared you.
-    """)
-    choice_a_1 = StoryNode("""
+    """
+    )
+    choice_a_1 = StoryNode(
+        """
     The bear returns and tells you it's been a rough week. After making peace with a talking bear, he shows you the way out of the forest.
 
     YOU HAVE ESCAPED THE WILDERNESS.
-    """)
-    choice_a_2 = StoryNode("""
+    """
+    )
+    choice_a_2 = StoryNode(
+        """
     The bear returns and tells you that bullying is not okay before leaving you alone
     in the wilderness.
 
     YOU REMAIN LOST.
-    """)
-    choice_b_1 = StoryNode("""
+    """
+    )
+    choice_b_1 = StoryNode(
+        """
     The bear is unamused. After smelling the flowers, it turns around and leaves you alone.
 
     YOU REMAIN LOST.
-    """)
-    choice_b_2 = StoryNode("""
+    """
+    )
+    choice_b_2 = StoryNode(
+        """
     The bear understands and apologizes for startling you. Your new friend shows you a path leading out of the forest.
 
     YOU HAVE ESCAPED THE WILDERNESS.
-    """)
+    """
+    )
     choice_a.add_child(choice_a_1)
     choice_a.add_child(choice_a_2)
     choice_b.add_child(choice_b_1)
@@ -145,18 +164,20 @@ def main():
     story_root.add_child(choice_b)
     game = Game(story_root)
     print("Once upon a time...")
-    # loop until the game is over
     while True:
         print(game.story_text())
-        if game.is_over(): 
+        if game.is_over():
             break
         players_choice = None
         while True:
             players_choice = input("Please choose an option: ")
-            if players_choice.isnumeric() and (int(players_choice) - 1) in range(game.num_choices()):
+            if players_choice.isnumeric() and (int(players_choice) - 1) in range(
+                game.num_choices()
+            ):
                 break
-            print("Invalid choice. Please try again.") 
+            print("Invalid choice. Please try again.")
         game.choose(int(players_choice))
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
