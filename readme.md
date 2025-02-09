@@ -8,4 +8,4 @@ So far, the lessons have covered:
 - Doubly linked lists (doubly_linked_list.py)
 - Hashmaps using open addressing to deal with collisions (hashmap.py)
 - Hashmaps using separate chaining to deal with collisions (blossom.py)
-- Trees (tree.py)
+- Trees (tree.py and wilderness_escape.py)
