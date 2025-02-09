@@ -1,6 +1,7 @@
 from collections import deque
 from tree import TreeNode
 
+
 def bfs(root_node, search_value):
     """
     A breadth-first search function.
@@ -25,15 +26,13 @@ def bfs(root_node, search_value):
     paths_to_search = deque()
     root_path = [root_node]
     paths_to_search.appendleft(root_path)
-    while len(paths_to_search) > 0:
+    while paths_to_search:
         path = paths_to_search.pop()
         node = path[-1]
-        print(f"Searching node with value: {node.value}")
         if node.value == search_value:
             return path
         for child in node.children:
             child_path = path[:]
             child_path.append(child)
             paths_to_search.appendleft(child_path)
-    NOT_FOUND = None
-    return NOT_FOUND
+    return None
