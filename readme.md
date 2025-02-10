@@ -10,3 +10,4 @@ So far, the lessons have covered:
 - Hashmaps using separate chaining to deal with collisions (blossom.py)
 - Trees (tree.py and wilderness_escape.py)
   - Breadth-first search (bfs.py)
+  - Depth-first search (dfs.py)
