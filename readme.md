@@ -11,3 +11,5 @@ So far, the lessons have covered:
 - Trees (tree.py and wilderness_escape.py)
   - Breadth-first search (bfs.py)
   - Depth-first search (dfs.py)
+  - Algorithms
+    - Binary search (binary_search.py)
