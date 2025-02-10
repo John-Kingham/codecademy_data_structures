@@ -2,7 +2,7 @@ from collections import deque
 from tree import TreeNode
 
 
-def bfs(root_node, search_value):
+def breadth_first_search(root_node, search_value):
     """
     A breadth-first search function.
 

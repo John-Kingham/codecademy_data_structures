@@ -12,4 +12,4 @@ So far, the lessons have covered:
   - Breadth-first search (bfs.py)
   - Depth-first search (dfs.py)
   - Algorithms
-    - Binary search (binary_search.py)
+    - Binary search (recursive and iterative) (binary_search.py)

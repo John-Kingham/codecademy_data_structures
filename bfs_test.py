@@ -1,5 +1,5 @@
 import unittest
-from bfs import bfs
+from bfs import breadth_first_search
 from tree import TreeNode
 
 class TestBfs(unittest.TestCase):
@@ -15,5 +15,5 @@ class TestBfs(unittest.TestCase):
         my_dog = TreeNode("Spot.jpg")
         docs.children = [my_wish, my_todo]
         photos.children = [my_cat, my_dog]
-        self.assertIsNone(bfs(sample_root_node, "sausage"))
-        self.assertEqual(bfs(sample_root_node, "Fluffy.jpg"), [sample_root_node, photos, my_cat])
+        self.assertIsNone(breadth_first_search(sample_root_node, "sausage"))
+        self.assertEqual(breadth_first_search(sample_root_node, "Fluffy.jpg"), [sample_root_node, photos, my_cat])
