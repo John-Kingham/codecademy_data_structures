@@ -12,5 +12,6 @@ So far, the lessons have covered:
   - Breadth-first search (bfs.py)
   - Depth-first search (dfs.py)
   - Binary search tree (binary_search_tree.py)
+  - Heap map (heap_map.py)
   - Algorithms
     - Binary search (recursive and iterative) (binary_search.py)
