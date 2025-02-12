@@ -9,10 +9,12 @@ So far, the lessons have covered:
 - Hashmaps using open addressing to deal with collisions (hashmap.py)
 - Hashmaps using separate chaining to deal with collisions (blossom.py)
 - Trees (tree.py and wilderness_escape.py)
-  - Breadth-first search (bfs.py)
-  - Depth-first search (dfs.py)
   - Binary search tree (binary_search_tree.py)
   - Max-heap (max_heap.py)
-  - Tree search/sort algorithms
-    - Binary search (recursive and iterative) (binary_search.py)
-    - Heapsort (heapsort.py)
+- Tree search/sort algorithms
+  - Breadth-first search (bfs.py)
+  - Depth-first search (dfs.py)
+  - Binary search (recursive and iterative) (binary_search.py)
+  - Heapsort (heapsort.py)
+- Graphs
+  - Breadth-first and depth-first search (graph_search.py)
